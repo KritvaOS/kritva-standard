@@ -1,0 +1,206 @@
+# TEMPLATE ONLY / NOT AN APPROVAL
+# Copyright (c) Kritva Robotics.
+# Template Version: 0.1.0
+# Status: DRAFT
+#
+# Define the verification scope, execution configuration, coverage goals,
+# quality gates, and evidence requirements for a KRITVA IP.
+# Replace TBD/UNVERIFIED placeholders with reviewed information.
+
+schema_version: "0.1.0"
+
+verification_plan:
+  plan_id: "KVRF-PLAN-001"
+  status: PROPOSED
+  owner: "Dinesh Annayya"
+  reviewer: TBD
+  approver: TBD
+  created_date: TBD
+  last_updated_date: TBD
+
+ip:
+  ip_id: TBD
+  ip_name: TBD
+  ip_revision: TBD
+  repository: TBD
+  source_revision: UNVERIFIED
+  assurance_target: L0
+
+dut_boundary:
+  description: TBD
+  top_module: TBD
+  included_blocks:
+    - TBD
+  excluded_blocks:
+    - TBD
+  interfaces:
+    - name: TBD
+      protocol: TBD
+      role: TBD
+      profile: TBD
+  clock_domains:
+    - name: TBD
+      frequency: TBD
+  reset_domains:
+    - name: TBD
+      polarity: TBD
+      behavior: TBD
+
+requirements_baseline:
+  source_document: TBD
+  source_revision: UNVERIFIED
+  baseline_date: TBD
+  requirement_ids:
+    - TBD
+  traceability_method: TBD
+  change_control_reference: TBD
+
+configuration_matrix:
+  - configuration_id: TBD
+    description: TBD
+    parameters:
+      - name: TBD
+        value: TBD
+    defines:
+      - TBD
+    build_options:
+      - TBD
+    verification_required: true
+
+test_suites:
+  - suite_id: "KVRF-SUITE-TBD-TBD-NNN"
+    name: TBD
+    level: TBD
+    purpose: TBD
+    test_ids:
+      - "KVRF-TST-TBD-TBD-NNN"
+    configurations:
+      - TBD
+    requirements_covered:
+      - TBD
+    execution_mode: TBD
+    pass_criteria: TBD
+
+coverage_model:
+  categories:
+    - category: functional
+      description: TBD
+      collection_method: TBD
+      target: TBD
+      mandatory: true
+    - category: code
+      description: TBD
+      collection_method: TBD
+      target: TBD
+      mandatory: TBD
+    - category: assertion
+      description: TBD
+      collection_method: TBD
+      target: TBD
+      mandatory: TBD
+    - category: requirement
+      description: TBD
+      collection_method: TBD
+      target: TBD
+      mandatory: true
+  exclusions:
+    - item: TBD
+      rationale: TBD
+
+toolchain:
+  simulator:
+    name: TBD
+    version: UNVERIFIED
+  python:
+    name: Python
+    version: UNVERIFIED
+  cocotb:
+    name: cocotb
+    version: UNVERIFIED
+  additional_tools:
+    - name: TBD
+      version: UNVERIFIED
+      purpose: TBD
+
+environment:
+  operating_system: TBD
+  operating_system_version: UNVERIFIED
+  execution_platform: TBD
+  dependencies:
+    - name: TBD
+      version: UNVERIFIED
+  environment_capture_method: TBD
+
+quality_gates:
+  mandatory:
+    - gate_id: KVRF-GATE-001
+      description: All mandatory tests complete with PASS outcome
+      acceptance_criteria: TBD
+    - gate_id: KVRF-GATE-002
+      description: Required requirement coverage achieved
+      acceptance_criteria: TBD
+    - gate_id: KVRF-GATE-003
+      description: Required evidence records and artifacts available
+      acceptance_criteria: TBD
+  advisory:
+    - gate_id: KVRF-ADV-001
+      description: TBD
+      acceptance_criteria: TBD
+  failure_handling:
+    fail_policy: TBD
+    blocked_policy: TBD
+    inconclusive_policy: TBD
+    waiver_reference: TBD
+
+evidence:
+  schema_version: "0.1.0"
+  destination: TBD
+  naming_convention: TBD
+  required_artifacts:
+    - TBD
+  retention_policy: TBD
+  reproducibility_requirements:
+    source_revision_required: true
+    configuration_id_required: true
+    tool_versions_required: true
+    command_capture_required: true
+    seed_capture_required_when_applicable: true
+
+apb_interface_profile:
+  status: TBD
+  profile_reference: TBD
+  apb_revision: TBD
+  data_width: TBD
+  address_width: TBD
+  optional_signals: TBD
+  protocol_assertions: TBD
+  notes: "TBD - APB interface profile and revision are not yet established."
+
+known_limitations:
+  - limitation: TBD
+    impact: TBD
+    mitigation: TBD
+    owner: "Dinesh Annayya"
+
+approval_records:
+  - record_id: KVRF-PLAN-APP-001
+    role: owner
+    person: "Dinesh Annayya"
+    status: PROPOSED
+    date: null
+    comments: TBD
+  - record_id: KVRF-PLAN-APP-002
+    role: reviewer
+    person: TBD
+    status: PENDING
+    date: null
+    comments: TBD
+  - record_id: KVRF-PLAN-APP-003
+    role: approver
+    person: TBD
+    status: PENDING
+    date: null
+    comments: TBD
+
+plan_notes:
+  - TBD

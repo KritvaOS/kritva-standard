@@ -1,0 +1,146 @@
+# TEMPLATE ONLY / NOT AN APPROVAL
+# Copyright (c) Kritva Robotics.
+# Template Version: 0.1.0
+# Status: DRAFT
+#
+# Complete this record when evaluating an IP candidate for adoption.
+# Link it to the corresponding IP lifecycle record using ip_id and decision_id.
+# Replace TBD/UNVERIFIED placeholders with reviewed information.
+# This template does not itself grant adoption approval or usage rights.
+
+schema_version: "0.1.0"
+
+adoption:
+  adoption_record_id: "IP-ADOPT-001"
+  status: PROPOSED
+  created_date: TBD
+  last_updated_date: TBD
+  owner: "Dinesh Annayya"
+  reviewer: TBD
+
+lifecycle_reference:
+  ip_id: TBD
+  lifecycle_record_path: TBD
+  decision_id: "LCP-DEC-001"
+
+candidate:
+  name: TBD
+  description: TBD
+  category: TBD
+  version_or_release: TBD
+  upstream_project: TBD
+  upstream_url: TBD
+  source_repository: TBD
+  source_revision: UNVERIFIED
+  source_release_tag: TBD
+  source_archive_checksum: UNVERIFIED
+  origin_type: TBD
+
+provenance:
+  original_author_or_organisation: TBD
+  source_repository_owner: TBD
+  source_revision_verified: false
+  release_provenance_verified: false
+  provenance_evidence:
+    - TBD
+  notes: TBD
+
+licence_assessment:
+  declared_licence: TBD
+  licence_files_reviewed: false
+  licence_compatibility_status: UNVERIFIED
+  redistribution_status: UNVERIFIED
+  modification_status: UNVERIFIED
+  attribution_requirements: TBD
+  patent_or_other_restrictions: UNVERIFIED
+  assessment_owner: "Dinesh Annayya"
+  assessment_date: TBD
+  evidence_references:
+    - TBD
+  open_licence_questions:
+    - TBD
+
+evaluation:
+  evaluation_status: NOT_STARTED
+  evaluation_scope: TBD
+  source_quality: UNVERIFIED
+  documentation_quality: UNVERIFIED
+  build_status: UNVERIFIED
+  verification_status: UNVERIFIED
+  portability_status: UNVERIFIED
+  security_review_status: UNVERIFIED
+  standards_alignment_status: UNVERIFIED
+  summary: TBD
+  strengths:
+    - TBD
+  limitations:
+    - TBD
+  evidence_references:
+    - TBD
+
+intended_scope:
+  proposed_use: TBD
+  target_products_or_platforms:
+    - TBD
+  included_features:
+    - TBD
+  excluded_features:
+    - TBD
+  integration_assumptions:
+    - TBD
+  restrictions:
+    - TBD
+
+initial_classification:
+  proposed_lifecycle_state: proposed
+  proposed_assurance_level: L0
+  rationale: TBD
+  required_assurance_evidence:
+    - TBD
+
+adoption_recommendation:
+  recommendation: DEFER
+  rationale: TBD
+  conditions:
+    - TBD
+  required_actions:
+    - TBD
+  restrictions:
+    - TBD
+
+risks:
+  overall_risk_status: UNASSESSED
+  open_risks:
+    - risk_id: IP-ADOPT-RISK-001
+      description: TBD
+      impact: TBD
+      likelihood: TBD
+      mitigation: TBD
+      owner: "Dinesh Annayya"
+      status: OPEN
+  unresolved_questions:
+    - TBD
+
+decision:
+  decision_id: "LCP-DEC-001"
+  ip_id: TBD
+  decision_type: INITIAL_ADOPTION
+  from_state: null
+  to_state: proposed
+  from_assurance_level: null
+  to_assurance_level: L0
+  status: PROPOSED
+  rationale: TBD
+  restrictions:
+    - TBD
+  open_issues:
+    - TBD
+  owner: "Dinesh Annayya"
+  reviewer: TBD
+  approver: TBD
+  decision_date: null
+  evidence_references:
+    - TBD
+
+record_notes:
+  - TBD

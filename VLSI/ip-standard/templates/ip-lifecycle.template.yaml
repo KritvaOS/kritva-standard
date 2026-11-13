@@ -1,0 +1,97 @@
+
+# TEMPLATE ONLY / NOT AN APPROVAL
+# Copyright (c) Kritva Robotics.
+# Template Version: 0.1.0
+# Status: DRAFT
+# Schema: VLSI/ip-standard/schemas/ip-lifecycle.schema.json
+# Replace placeholders with verified information before use.
+# This template must not be treated as an approved lifecycle record.
+
+schema_version: "0.1.0"
+
+ip:
+  id: "TBD"
+  name: "TBD"
+  category: "TBD"
+  description: "TBD"
+
+  origin:
+    type: "kritva_developed"
+    upstream_project: null
+    upstream_revision: null
+    licence: "TBD"
+
+  source:
+    repository: "TBD"
+    revision: "TBD"
+    release_tag: null
+
+lifecycle:
+  state: "proposed"
+  assurance_level: "L0"
+  effective_date: null
+  decision_id: "LCP-DEC-001"
+
+ownership:
+  owner: "Dinesh Annayya"
+  technical_reviewer: "TBD"
+  approver: "TBD"
+
+intended_use:
+  scope: "TBD"
+  permitted_use: "evaluation_only"
+  restrictions:
+    - "Not approved for production use."
+
+requirements:
+  standard_references: []
+  requirement_ids: []
+
+verification:
+  framework: "TBD"
+  evidence_format: "KVRF-schema"
+  evidence_schema_version: "0.1.0"
+  tool_versions:
+    simulator: "UNVERIFIED"
+    python: "UNVERIFIED"
+    cocotb: "UNVERIFIED"
+  evidence_references: []
+
+dependencies: []
+
+risks:
+  open_issues:
+    - "Initial technical assessment pending."
+  accepted_risks: []
+
+relationships:
+  replaces: []
+  replaced_by: []
+  depends_on: []
+
+maintenance:
+  support_status: "TBD"
+  maintenance_owner: "Dinesh Annayya"
+  last_review_date: null
+  next_review_date: null
+
+decisions:
+  - id: "LCP-DEC-001"
+    ip_id: "TBD"
+    decision_type: "INITIAL_REGISTRATION"
+    from_state: null
+    to_state: "proposed"
+    from_assurance_level: null
+    to_assurance_level: "L0"
+    source_revision: "TBD"
+    evidence_references: []
+    rationale: "Initial IP lifecycle registration. Technical assessment and adoption approval are pending."
+    restrictions:
+      - "Evaluation only."
+    open_issues:
+      - "Complete initial IP assessment."
+    owner: "Dinesh Annayya"
+    reviewer: "TBD"
+    approver: "TBD"
+    status: "PROPOSED"
+    decision_date: null

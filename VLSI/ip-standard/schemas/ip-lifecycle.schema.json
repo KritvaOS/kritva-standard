@@ -1,0 +1,530 @@
+
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/KritvaOS/kritva-standard/main/VLSI/ip-standard/schemas/ip-lifecycle.schema.json",
+  "title": "KRITVA IP Lifecycle Record",
+  "description": "KRITVA IP lifecycle record, including lifecycle state, assurance level, ownership, provenance, verification, maintenance, relationships, and lifecycle decisions.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "ip",
+    "lifecycle",
+    "ownership",
+    "intended_use",
+    "requirements",
+    "verification",
+    "dependencies",
+    "risks",
+    "relationships",
+    "maintenance",
+    "decisions"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "ip": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "name",
+        "category",
+        "description",
+        "origin",
+        "source"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "category": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string"
+        },
+        "origin": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "type"
+          ],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "kritva_developed",
+                "third_party",
+                "open_source",
+                "other"
+              ]
+            },
+            "upstream_project": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "upstream_revision": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "licence": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "source": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "repository",
+            "revision"
+          ],
+          "properties": {
+            "repository": {
+              "type": "string",
+              "minLength": 1
+            },
+            "revision": {
+              "type": "string",
+              "minLength": 1
+            },
+            "release_tag": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "lifecycle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "state",
+        "assurance_level"
+      ],
+      "properties": {
+        "state": {
+          "type": "string",
+          "enum": [
+            "proposed",
+            "adopted",
+            "active",
+            "deprecated",
+            "replaced",
+            "retired"
+          ]
+        },
+        "assurance_level": {
+          "type": "string",
+          "enum": [
+            "L0",
+            "L1",
+            "L2",
+            "L3"
+          ]
+        },
+        "effective_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "decision_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "ownership": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "owner"
+      ],
+      "properties": {
+        "owner": {
+          "type": "string",
+          "minLength": 1
+        },
+        "technical_reviewer": {
+          "type": "string",
+          "minLength": 1
+        },
+        "approver": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "intended_use": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scope",
+        "permitted_use",
+        "restrictions"
+      ],
+      "properties": {
+        "scope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "permitted_use": {
+          "type": "string",
+          "minLength": 1
+        },
+        "restrictions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "requirements": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "standard_references",
+        "requirement_ids"
+      ],
+      "properties": {
+        "standard_references": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "requirement_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "framework",
+        "evidence_format",
+        "evidence_schema_version",
+        "tool_versions",
+        "evidence_references"
+      ],
+      "properties": {
+        "framework": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_format": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_schema_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "tool_versions": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "evidence_references": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "risks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "open_issues",
+        "accepted_risks"
+      ],
+      "properties": {
+        "open_issues": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "accepted_risks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "relationships": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "replaces",
+        "replaced_by",
+        "depends_on"
+      ],
+      "properties": {
+        "replaces": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "replaced_by": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "depends_on": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "maintenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "support_status",
+        "maintenance_owner",
+        "last_review_date",
+        "next_review_date"
+      ],
+      "properties": {
+        "support_status": {
+          "type": "string",
+          "minLength": 1
+        },
+        "maintenance_owner": {
+          "type": "string",
+          "minLength": 1
+        },
+        "last_review_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "next_review_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        }
+      }
+    },
+    "decisions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/decision"
+      }
+    }
+  },
+  "$defs": {
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "ip_id",
+        "decision_type",
+        "from_state",
+        "to_state",
+        "from_assurance_level",
+        "to_assurance_level",
+        "source_revision",
+        "evidence_references",
+        "rationale",
+        "restrictions",
+        "open_issues",
+        "owner",
+        "reviewer",
+        "approver",
+        "status",
+        "decision_date"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ip_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "decision_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "from_state": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "proposed",
+            "adopted",
+            "active",
+            "deprecated",
+            "replaced",
+            "retired",
+            null
+          ]
+        },
+        "to_state": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "proposed",
+            "adopted",
+            "active",
+            "deprecated",
+            "replaced",
+            "retired",
+            null
+          ]
+        },
+        "from_assurance_level": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "L0",
+            "L1",
+            "L2",
+            "L3",
+            null
+          ]
+        },
+        "to_assurance_level": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "L0",
+            "L1",
+            "L2",
+            "L3",
+            null
+          ]
+        },
+        "source_revision": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_references": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1
+        },
+        "restrictions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "open_issues": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "owner": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reviewer": {
+          "type": "string",
+          "minLength": 1
+        },
+        "approver": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "PROPOSED",
+            "UNDER_REVIEW",
+            "APPROVED",
+            "REJECTED",
+            "SUPERSEDED",
+            "WITHDRAWN"
+          ]
+        },
+        "decision_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,75 @@
+# TEMPLATE ONLY / NOT AN APPROVAL
+# Copyright (c) Kritva Robotics.
+# Template Version: 0.1.0
+# Status: DRAFT
+# Classification: PUBLIC
+#
+# Maintain one dependency entry per monitored upstream IP/component.
+# Record upstream events and their triage, applicability, required actions,
+# and closure evidence. Replace placeholders before operational use.
+
+schema_version: "0.1.0"
+register_id: "IP-UPSTREAM-WATCH-001"
+owner: "Dinesh Annayya"
+classification: PUBLIC
+
+dependencies:
+  - component_id: TBD
+    component_name: TBD
+    source_category: THIRD_PARTY_OPEN_SOURCE
+    upstream_project: TBD
+    upstream_repository: TBD
+    upstream_release: UNKNOWN
+    upstream_commit: UNKNOWN
+    upstream_branch: UNKNOWN
+    source_checksum: UNVERIFIED
+    license: UNKNOWN
+    license_status: NOT_ASSESSED
+    consuming_repositories:
+      - TBD
+    dependency_type: DIRECT
+    adoption_status: UNKNOWN
+    maintenance_status: UNKNOWN
+    criticality: UNKNOWN
+    severity: S4
+    last_event_id: UNKNOWN
+    last_review_date: TBD
+    next_review: TBD
+    monitoring_method: MANUAL
+    maintenance_owner: "Dinesh Annayya"
+    customization_refs:
+      - TBD
+    current_kritva_revision: UNKNOWN
+    last_update_decision: UNKNOWN
+    deprecation_status: NOT_DEPRECATED
+    replacement_component_id: UNKNOWN
+    evidence_refs:
+      - TBD
+    notes: TBD
+
+    upstream_events:
+      - event_id: UP-EVENT-001
+        component_id: TBD
+        event_type: UNKNOWN
+        upstream_reference: TBD
+        detected_date: TBD
+        source_reference: TBD
+        summary: TBD
+        severity: S4
+        triage:
+          outcome: UNKNOWN
+          applicability: UNKNOWN
+          rationale: TBD
+          triage_owner: "Dinesh Annayya"
+          triage_date: TBD
+        required_action: UNKNOWN
+        action_owner: "Dinesh Annayya"
+        target_date: TBD
+        status: OPEN
+        closure:
+          closure_date: null
+          closure_summary: TBD
+          closure_evidence:
+            - TBD
+          verified_by: TBD
+        notes: TBD

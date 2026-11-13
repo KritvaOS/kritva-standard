@@ -1,0 +1,308 @@
+
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kritvaos.in/schemas/kvrf-evidence.schema.json",
+  "title": "KRITVA Verification Reference Flow Evidence Record",
+  "description": "KVRF 0.1.0 machine-readable evidence record for an individual test or test-suite execution.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "evidence_id",
+    "run_id",
+    "record_type",
+    "ip_id",
+    "source_revision",
+    "configuration_id",
+    "outcome",
+    "start_time",
+    "end_time",
+    "toolchain",
+    "environment",
+    "artifacts",
+    "producer"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "evidence_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "record_type": {
+      "type": "string",
+      "enum": [
+        "test",
+        "suite"
+      ]
+    },
+    "ip_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "ip_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_revision": {
+      "type": "string",
+      "minLength": 1
+    },
+    "configuration_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "test_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "suite_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "test_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "requirement_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "outcome": {
+      "type": "string",
+      "enum": [
+        "PASS",
+        "FAIL",
+        "BLOCKED",
+        "NOT_RUN",
+        "NOT_APPLICABLE",
+        "INCONCLUSIVE"
+      ]
+    },
+    "start_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "end_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "duration_ms": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "toolchain": {
+      "type": "object",
+      "description": "Tools and versions used to produce the evidence. Unverified versions must be recorded as UNVERIFIED.",
+      "minProperties": 1,
+      "additionalProperties": {
+        "$ref": "#/$defs/tool"
+      }
+    },
+    "environment": {
+      "type": "object",
+      "description": "Execution environment metadata. Unknown values may be recorded as UNVERIFIED.",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "command": {
+      "type": "string",
+      "minLength": 1
+    },
+    "seed": {
+      "oneOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "string",
+          "minLength": 1
+        }
+      ]
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/artifact"
+      }
+    },
+    "coverage": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": true
+        },
+        {
+          "type": "string",
+          "minLength": 1
+        }
+      ]
+    },
+    "failure_summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 1
+    },
+    "review_status": {
+      "type": "string",
+      "enum": [
+        "PENDING",
+        "IN_REVIEW",
+        "ACCEPTED",
+        "REJECTED",
+        "WAIVED",
+        "NOT_REQUIRED"
+      ]
+    },
+    "producer": {
+      "type": "string",
+      "minLength": 1
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "record_type": {
+            "const": "test"
+          }
+        },
+        "required": [
+          "record_type"
+        ]
+      },
+      "then": {
+        "required": [
+          "test_id"
+        ],
+        "not": {
+          "required": [
+            "suite_id"
+          ]
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "record_type": {
+            "const": "suite"
+          }
+        },
+        "required": [
+          "record_type"
+        ]
+      },
+      "then": {
+        "required": [
+          "suite_id"
+        ],
+        "not": {
+          "required": [
+            "test_id"
+          ]
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "outcome": {
+            "const": "FAIL"
+          }
+        },
+        "required": [
+          "outcome"
+        ]
+      },
+      "then": {
+        "required": [
+          "failure_summary"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "outcome": {
+            "const": "NOT_APPLICABLE"
+          }
+        },
+        "required": [
+          "outcome"
+        ]
+      },
+      "then": {
+        "required": [
+          "rationale"
+        ]
+      }
+    }
+  ],
+  "$defs": {
+    "tool": {
+      "type": "object",
+      "required": [
+        "name",
+        "version"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "artifact": {
+      "type": "object",
+      "required": [
+        "type",
+        "uri"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "uri": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-fA-F0-9]{64}$"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
