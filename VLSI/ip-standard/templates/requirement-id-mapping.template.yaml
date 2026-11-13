@@ -1,0 +1,61 @@
+# TEMPLATE ONLY / NOT AN APPROVAL
+# Copyright (c) Kritva Robotics.
+# Template Version: 0.1.0
+# Status: DRAFT
+#
+# PUBLIC TEMPLATE.
+# Do not populate this file with private profile rule text, implementation
+# details, or unreleased architecture information.
+# Complete per-rule mappings in the repository that owns the private profile.
+
+schema_version: "0.1.0"
+
+mapping_id: "KIP-MAP-001"
+
+profile:
+  name: TBD
+  standard_id: "KNX-RTL-STD-001"
+  version: TBD
+  visibility: PRIVATE
+  owning_repository: TBD
+
+common_standard:
+  name: "KRITVA_IP_STANDARD"
+  standard_id: TBD
+  version: TBD
+  visibility: PUBLIC
+
+owner: "Dinesh Annayya"
+reviewer: TBD
+review_status: PROPOSED
+# Allowed: PROPOSED, UNDER_REVIEW, APPROVED, REJECTED
+
+rows:
+  - profile_rule_id: "KNX-RTL-TBD-NNN"
+    common_requirement_id: "KIP-STD-TBD-NNN"
+    relationship: EQUIVALENT
+    # Allowed: EQUIVALENT, STRICTER, NEXUS_ONLY, PROMOTED
+    derived_from: null
+    strictness_note: TBD
+    enforcement_class_profile: TBD
+    enforcement_class_common: TBD
+    # Enforcement classes: A, T, R
+    review_status: PROPOSED
+    reviewer: TBD
+
+  - profile_rule_id: "KNX-RTL-TBD-NNN"
+    common_requirement_id: null
+    relationship: NEXUS_ONLY
+    derived_from: null
+    strictness_note: TBD
+    enforcement_class_profile: TBD
+    enforcement_class_common: null
+    review_status: PROPOSED
+    reviewer: TBD
+
+mapping_governance:
+  statement: "Mapping rows never copy or reinterpret rule text. Profile rule IDs are never renumbered. A promoted profile rule receives a new common requirement ID and retains its original profile rule ID as its derivation reference."
+  promotion_policy:
+    new_common_requirement_id_required: true
+    derived_from_required: true
+  public_content_restriction: "The public standard may describe mapping methodology and area-level relationships only. Per-rule mappings for private profiles must remain in the profile-owning private repository."

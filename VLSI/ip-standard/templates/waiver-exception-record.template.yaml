@@ -1,0 +1,119 @@
+# TEMPLATE ONLY / NOT AN APPROVAL
+# Copyright (c) Kritva Robotics.
+# Template Version: 0.1.0
+# Status: DRAFT
+#
+# Use this record for approved deviations from lifecycle, verification,
+# coverage, reset, or other KRITVA standards and policies.
+# A proposed waiver grants no permission until formally approved.
+
+schema_version: "0.1.0"
+
+exception:
+  exception_id: "KIP-WVR-001"
+  affected_ip_id: TBD
+  affected_ip_name: TBD
+  ip_revision: TBD
+  repository: TBD
+  requirement_or_policy_clause:
+    document: TBD
+    revision: UNVERIFIED
+    clause_or_requirement_id: TBD
+    description: TBD
+  waiver_type: TBD
+  # Examples: LIFECYCLE_EXCEPTION, COVERAGE_EXCLUSION,
+  # VERIFICATION_WAIVER, ACTIVE_HIGH_RESET, RTL_STANDARD_DEVIATION,
+  # OTHER_STANDARD_EXCEPTION
+
+  reason:
+    justification: TBD
+    alternatives_considered:
+      - TBD
+    reason_alternatives_rejected: TBD
+
+  impact:
+    technical_impact: TBD
+    operational_impact: TBD
+    affected_functions_or_interfaces:
+      - TBD
+    downstream_or_integration_impact: TBD
+
+  risk_assessment:
+    overall_risk: UNASSESSED
+    failure_modes:
+      - TBD
+    likelihood: TBD
+    severity: TBD
+    residual_risk: TBD
+    risk_acceptance_rationale: TBD
+
+  compensating_controls:
+    controls:
+      - control_id: KIP-WVR-CTRL-001
+        description: TBD
+        owner: "Dinesh Annayya"
+        verification_method: TBD
+    compensating_evidence:
+      - evidence_id: TBD
+        evidence_type: TBD
+        reference: TBD
+        result: UNVERIFIED
+    effectiveness_assessment: TBD
+
+  scope:
+    applicable_revisions:
+      - TBD
+    applicable_configurations:
+      - TBD
+    applicable_products_or_platforms:
+      - TBD
+    exclusions:
+      - TBD
+    scope_restrictions:
+      - TBD
+
+  validity:
+    effective_date: null
+    expiry_date: null
+    review_trigger:
+      - TBD
+    review_frequency: TBD
+    renewal_requires_reassessment: true
+
+  lifecycle_reference:
+    lifecycle_record_path: TBD
+    lifecycle_decision_id: TBD
+    related_adoption_or_customization_record: TBD
+
+  verification_reference:
+    verification_plan_id: TBD
+    kvrf_evidence_references:
+      - TBD
+    coverage_exclusion_reference: TBD
+    affected_test_or_suite_ids:
+      - TBD
+
+  governance:
+    owner: "Dinesh Annayya"
+    reviewer: TBD
+    approver: TBD
+    status: PROPOSED
+    # Allowed: PROPOSED, UNDER_REVIEW, APPROVED, REJECTED,
+    # EXPIRED, WITHDRAWN
+    approval_date: null
+    rejection_or_withdrawal_reason: TBD
+    review_notes: TBD
+
+  evidence_integrity_statement:
+    statement: "This waiver does not convert failed or missing evidence into passing evidence. Evidence outcomes remain unchanged and must be reported accurately under the KVRF evidence specification."
+    acknowledged: false
+
+  closure:
+    closure_date: null
+    closure_reason: TBD
+    closure_evidence:
+      - TBD
+    verified_by: TBD
+
+record_notes:
+  - TBD

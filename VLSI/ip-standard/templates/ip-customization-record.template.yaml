@@ -1,0 +1,162 @@
+# TEMPLATE ONLY / NOT AN APPROVAL
+# Copyright (c) Kritva Robotics.
+# Template Version: 0.1.0
+# Status: DRAFT
+#
+# Record each customization against an identified upstream baseline.
+# Link this record to the corresponding IP lifecycle record and decision.
+# The preference order is C1 wrapper, C2 patch, then C4 fork.
+# C3 parameter configuration is preferred where it avoids source modification.
+# C5 generated customization records the generation process and its inputs.
+# Replace TBD/UNVERIFIED placeholders with reviewed information.
+
+schema_version: "0.1.0"
+
+customization:
+  customization_record_id: "IP-CUST-001"
+  status: PROPOSED
+  owner: "Dinesh Annayya"
+  reviewer: TBD
+  created_date: TBD
+  last_updated_date: TBD
+
+lifecycle_reference:
+  ip_id: TBD
+  lifecycle_record_path: TBD
+  decision_id: "LCP-DEC-001"
+
+upstream_baseline:
+  project: TBD
+  repository: TBD
+  release_tag: TBD
+  revision: UNVERIFIED
+  source_archive_checksum: UNVERIFIED
+  licence: TBD
+  baseline_verified: false
+  verification_evidence:
+    - TBD
+
+classification:
+  category: C1
+  category_description: "Wrapper"
+  rationale: TBD
+  preference_order_assessment:
+    c3_parameter_configuration: UNVERIFIED
+    c1_wrapper: UNVERIFIED
+    c2_patch: UNVERIFIED
+    c4_fork: UNVERIFIED
+    c5_generated: UNVERIFIED
+  alternatives_considered:
+    - alternative: TBD
+      reason_not_selected: TBD
+
+customization_description:
+  summary: TBD
+  technical_rationale: TBD
+  intended_behavior_or_change: TBD
+  scope:
+    included:
+      - TBD
+    excluded:
+      - TBD
+  affected_files:
+    - path: TBD
+      change_type: TBD
+      description: TBD
+  upstream_ability:
+    status: UNASSESSED
+    rationale: TBD
+    proposed_upstream_contribution: TBD
+    upstream_issue_or_pr: TBD
+
+compatibility:
+  interface_compatibility: UNVERIFIED
+  standards_alignment: UNVERIFIED
+  technology_boundary_compliance: UNVERIFIED
+  reset_and_clock_compliance: UNVERIFIED
+  licence_compatibility: UNVERIFIED
+  known_deviations:
+    - TBD
+  waiver_references:
+    - TBD
+
+reverification:
+  required: true
+  plan_status: PROPOSED
+  baseline_evidence_review:
+    required: true
+    assessment: TBD
+  verification_scope:
+    - TBD
+  kvrf:
+    required: true
+    evidence_schema_version: "0.1.0"
+    test_plan_reference: TBD
+    required_test_ids:
+      - TBD
+    required_suite_ids:
+      - TBD
+    acceptance_criteria:
+      - TBD
+  additional_verification:
+    - TBD
+  completion_criteria:
+    - TBD
+
+evidence_invalidation:
+  assessment: UNASSESSED
+  invalidated_evidence:
+    - TBD
+  retained_evidence:
+    - TBD
+  rationale: TBD
+  replacement_evidence_required:
+    - TBD
+
+rebase_and_maintenance:
+  upstream_tracking_required: true
+  upstream_monitoring_owner: "Dinesh Annayya"
+  rebase_strategy: TBD
+  rebase_frequency_or_trigger: TBD
+  conflict_resolution_plan: TBD
+  regression_verification_required: true
+  maintenance_owner: "Dinesh Annayya"
+  support_expectations: TBD
+  deprecation_or_replacement_plan: TBD
+
+risks:
+  overall_risk_status: UNASSESSED
+  open_risks:
+    - risk_id: IP-CUST-RISK-001
+      description: TBD
+      impact: TBD
+      likelihood: TBD
+      mitigation: TBD
+      owner: "Dinesh Annayya"
+      status: OPEN
+  unresolved_questions:
+    - TBD
+
+decision:
+  decision_id: "LCP-DEC-001"
+  ip_id: TBD
+  decision_type: CUSTOMIZATION
+  from_state: null
+  to_state: proposed
+  from_assurance_level: null
+  to_assurance_level: L0
+  status: PROPOSED
+  rationale: TBD
+  restrictions:
+    - TBD
+  open_issues:
+    - TBD
+  owner: "Dinesh Annayya"
+  reviewer: TBD
+  approver: TBD
+  decision_date: null
+  evidence_references:
+    - TBD
+
+record_notes:
+  - TBD
