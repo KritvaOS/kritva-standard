@@ -9,7 +9,7 @@
 # and closure evidence. Replace placeholders before operational use.
 
 schema_version: "0.1.0"
-register_id: "IP-UPSTREAM-WATCH-001"
+register_id: "KIP-UPW-001"
 owner: "Dinesh Annayya"
 classification: PUBLIC
 

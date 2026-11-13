@@ -1527,7 +1527,7 @@ The following example is illustrative only. It does not identify an actual KRITV
 
 ~~~yaml
 schema_version: "0.1.0"
-register_id: "UPM-WATCH-EXAMPLE"
+register_id: "KIP-UPW-001"
 
 owner: "Dinesh Annayya"
 classification: "PUBLIC"

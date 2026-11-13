@@ -93,5 +93,7 @@ decisions:
     owner: "Dinesh Annayya"
     reviewer: "TBD"
     approver: "TBD"
+    approval_basis: null
+    # Allowed: INDEPENDENT_REVIEW, SOLE_OWNER_INTERIM (LCP 8.5)
     status: "PROPOSED"
     decision_date: null

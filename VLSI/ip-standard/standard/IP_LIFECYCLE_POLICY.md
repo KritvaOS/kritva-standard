@@ -770,6 +770,37 @@ A mutable status summary MAY be generated from the decision history, but MUST NO
 
 Where the programme uses a commit-bound approval ledger, lifecycle decisions that fall within its scope MUST reference the corresponding programme approval record rather than creating a conflicting approval mechanism.
 
+### 8.5 Interim sole-owner operating mode (proposed)
+
+Status: PROPOSED 2026-11-13. This section takes effect only when the Owner
+approves it (LCP-OI-021). Until then, section 8.2 applies and approval
+authority MUST be explicitly recorded.
+
+While the Owner is the only designated reviewer and approver, the following
+interim rules apply:
+
+1. The Owner MAY hold the owner, reviewer, approver and release-authority
+   roles for the same decision.
+2. The record MUST name each role explicitly and set `approval_basis` to
+   `SOLE_OWNER_INTERIM`. A decision approved on this basis MUST NOT be
+   described as independently reviewed.
+3. Self-approval MUST NOT be implicit. The approval rationale MUST be recorded
+   and the evidence references MUST be present before the status becomes
+   `APPROVED`.
+4. For promotion to L3, for exceptions or waivers that deviate from a MUST
+   requirement, and for any decision rated high risk, the Owner MUST record
+   that independent review was unavailable, and SHOULD obtain independent human
+   review where a qualified reviewer is reasonably available.
+5. Reviews performed with automated or AI-assisted tools MAY be recorded as
+   review inputs (tool, date, scope and findings). They are not reviewer or
+   approver roles and do not constitute independent review.
+6. The interim mode ends when a second qualified reviewer or approver is
+   designated and recorded. Decisions approved under `SOLE_OWNER_INTERIM` that
+   are at L3, or that are active with an unexpired exception, SHOULD then be
+   re-reviewed by the independent reviewer within a period defined by the
+   Owner (LCP-OI-021).
+7. Interim approvals remain valid records. They are marked, not rewritten.
+
 ## 9. Lifecycle evidence and KVRF records
 
 ### 9.1 Evidence principles
@@ -985,7 +1016,7 @@ Suggested structure:
 decision:
   id: "LCP-DEC-001"
   ip_id: "KIP-IP-EXAMPLE-001"
-  decision_type: "STATE_TRANSITION"
+  decision_type: "INITIAL_ADOPTION"
 
   from_state: "proposed"
   to_state: "adopted"
@@ -1009,6 +1040,24 @@ decision:
 ~~~
 
 The example is a proposed decision only. It MUST NOT be interpreted as an actual approval.
+
+The `decision_type` value MUST be one of the following controlled values:
+
+| decision_type | Use |
+|---|---|
+| `INITIAL_REGISTRATION` | First registration of an IP (no previous state; typically `proposed` at L0) |
+| `INITIAL_ADOPTION` | The adoption decision from `proposed` to `adopted`, normally produced by the adoption process |
+| `STATE_TRANSITION` | Any other change of lifecycle state, including activation, deprecation, replacement and retirement |
+| `ASSURANCE_CHANGE` | A change of assurance level with no lifecycle state change |
+| `CUSTOMIZATION` | A decision arising from a customization record |
+| `UPSTREAM_UPDATE` | A decision arising from an upstream update or maintenance event |
+| `EXCEPTION` | A decision that records or ends an approved exception or waiver |
+| `REINSTATEMENT` | Reinstatement of a retired IP |
+
+If a decision changes both state and assurance level, it uses the value that
+matches the state change. Policy documents and templates MUST use only these
+values. Adding a value requires a revision of this policy and of
+`ip-lifecycle.schema.json`.
 
 ### 10.4 Record ownership
 
@@ -1036,6 +1085,23 @@ Lifecycle records MUST preserve:
 A current-state summary MAY be generated from historical records.
 
 The generated summary MUST be distinguishable from the underlying authoritative records.
+
+### 10.6 Record identifier conventions
+
+| Record | Identifier form | Scope and notes |
+|---|---|---|
+| IP | `KIP-IP-<NAME>-NNN` | Global; assigned once |
+| Lifecycle decision | `LCP-DEC-NNN` | Unique within one IP's lifecycle record; referenced globally as `<ip_id>/<decision id>` |
+| Exception or waiver | `KIP-WVR-NNN` | Global |
+| Requirement mapping | `KIP-MAP-NNN` | Global (public template; populated mappings are private) |
+| Upstream watch register | `KIP-UPW-NNN` | Global |
+| KVRF plan, suite, test, run | `KVRF-PLAN-`, `KVRF-SUITE-`, `KVRF-TST-`, `KVRF-RUN-` | Defined by the KVRF Specification |
+| Policy requirement | `<DOC>-<CAT>-NNN` | For example `ADP-PR-001`; owned by that document |
+| Open item | `<DOC>-OI-NNN` | Owned by that document |
+
+Identifiers MUST NOT be reused or renumbered. The `NNN` values in templates
+and examples (for example `LCP-DEC-001`) are placeholders and do not reserve
+identifiers.
 
 ## 11. Relationship to IP adoption and customization
 
@@ -1193,6 +1259,38 @@ Exceptions SHOULD have an expiry date or explicit review trigger.
 Expired exceptions MUST NOT be treated as current approval.
 
 An exception that remains necessary MUST be reviewed and renewed through a new or updated recorded decision.
+
+### 13.4 Waiver types, validity and approval
+
+The `waiver_type` of an exception or waiver record MUST be one of:
+
+| waiver_type | Applies to |
+|---|---|
+| `LIFECYCLE_EXCEPTION` | An exception to a lifecycle, assurance or transition criterion in this policy |
+| `VERIFICATION_WAIVER` | A required verification activity or evidence item not performed or not accepted |
+| `COVERAGE_EXCLUSION` | A coverage item excluded from the closure target (KVRF section 11.8) |
+| `ACTIVE_HIGH_RESET` | Use of an active-high reset (KIP-STD-CLKRST-009) |
+| `RTL_STANDARD_DEVIATION` | A deviation from another RTL or interface requirement of the common standard or a profile |
+| `OTHER_STANDARD_EXCEPTION` | Any other approved deviation; the clause MUST be identified |
+
+Rules for all waiver types:
+
+1. A waiver is effective only when its status is `APPROVED` and the current
+   date is before `expiry_date`.
+2. `expiry_date` MUST be set before approval. It MUST NOT exceed 12 months
+   from `approval_date` unless the approver records a longer period and the
+   reason (LCP-OI-022).
+3. Renewal requires a new or updated recorded decision and a reassessment of
+   risk; it MUST NOT happen automatically.
+4. A waiver MUST name the affected IP, revision and configuration, and the
+   exact requirement or clause waived.
+5. Approval authority follows section 8.2 (exception approver), or section 8.5
+   while the interim sole-owner mode is in effect.
+6. A waiver never changes an evidence outcome. Failed or missing evidence
+   remains `FAIL`, `BLOCKED`, `NOT_RUN` or `INCONCLUSIVE` under the KVRF
+   evidence schema.
+7. `WAIVED` is a requirement-level compliance status used in adoption and
+   customization assessments. It is not a KVRF test outcome.
 
 ## 14. Lifecycle monitoring and review
 
@@ -1431,6 +1529,8 @@ The following items remain open for policy finalization. Each item is owned by D
 | LCP-OI-018 | Exception validity | Define maximum exception duration and renewal requirements. |
 | LCP-OI-019 | Lifecycle automation | Decide which lifecycle checks are mandatory CI gates and which remain advisory. |
 | LCP-OI-020 | Lifecycle dashboard | Decide whether a consolidated lifecycle dashboard is required and where it is maintained. |
+| LCP-OI-021 | Interim sole-owner operating mode | Approve, revise or reject section 8.5, including the re-review period after the interim mode ends. |
+| LCP-OI-022 | Waiver validity period | Confirm the 12-month default maximum and the conditions for a longer period (section 13.4). |
 
 No open item is considered approved by its inclusion in this table.
 
