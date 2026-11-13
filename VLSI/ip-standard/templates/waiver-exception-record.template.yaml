@@ -21,8 +21,8 @@ exception:
     clause_or_requirement_id: TBD
     description: TBD
   waiver_type: TBD
-  # Examples: LIFECYCLE_EXCEPTION, COVERAGE_EXCLUSION,
-  # VERIFICATION_WAIVER, ACTIVE_HIGH_RESET, RTL_STANDARD_DEVIATION,
+  # Allowed (LCP 13.4): LIFECYCLE_EXCEPTION, VERIFICATION_WAIVER,
+  # COVERAGE_EXCLUSION, ACTIVE_HIGH_RESET, RTL_STANDARD_DEVIATION,
   # OTHER_STANDARD_EXCEPTION
 
   reason:
@@ -75,6 +75,8 @@ exception:
   validity:
     effective_date: null
     expiry_date: null
+    # expiry_date is required before approval and normally <= 12 months
+    # from approval_date (LCP 13.4)
     review_trigger:
       - TBD
     review_frequency: TBD
@@ -97,6 +99,8 @@ exception:
     owner: "Dinesh Annayya"
     reviewer: TBD
     approver: TBD
+    approval_basis: null
+    # Allowed: INDEPENDENT_REVIEW, SOLE_OWNER_INTERIM (LCP 8.5)
     status: PROPOSED
     # Allowed: PROPOSED, UNDER_REVIEW, APPROVED, REJECTED,
     # EXPIRED, WITHDRAWN

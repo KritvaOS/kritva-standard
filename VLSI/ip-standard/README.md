@@ -128,6 +128,14 @@ Enforcement classes are:
 
 Enforcement class does not change normative force.
 
+### 5.5 Record identifiers
+
+Record identifiers follow the conventions in the IP Lifecycle Policy section
+10.6: `KIP-IP-<NAME>-NNN` (IP), `LCP-DEC-NNN` (lifecycle decision, unique within
+an IP record), `KIP-WVR-NNN` (waiver), `KIP-MAP-NNN` (mapping),
+`KIP-UPW-NNN` (upstream watch register) and the `KVRF-*` identifiers defined by
+the KVRF Specification. Identifiers are never reused or renumbered.
+
 ## 6. Public and private boundary
 
 This repository is PUBLIC.

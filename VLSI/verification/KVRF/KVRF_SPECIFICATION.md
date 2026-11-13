@@ -1007,6 +1007,8 @@ A coverage exclusion or verification waiver MUST include:
 
 A waiver MUST NOT convert an uncovered behavior into covered behavior.
 
+Waiver types, validity, expiry and approval authority are defined in the IP Lifecycle Policy section 13.4. `WAIVED` is not a KVRF evidence outcome.
+
 ## 12. APB-first register and bus verification
 
 ### 12.1 Register-bus principle

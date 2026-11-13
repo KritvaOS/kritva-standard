@@ -207,17 +207,23 @@ Compliance levels are cumulative.
 | Level | Name | Meaning |
 |---|---|---|
 | L0 | Registered | IP identity and source provenance are registered |
-| L1 | Specified | IP has an approved or reviewed specification package |
+| L1 | Evaluated | IP has been technically evaluated: functionality, interfaces, source baseline and applicable requirements are documented, and an adoption or continuation decision is recorded |
 | L2 | Verified | Required verification activities have passed and evidence is accepted |
 | L3 | Release-qualified | IP has passed applicable release, quality and integration qualification gates |
 
 An IP claiming a higher level must satisfy all applicable requirements
 at lower levels.
 
+The L0 to L3 definitions in this table are aligned with the assurance levels
+in the IP Lifecycle Policy (LCP section 6) and the KVRF Specification. L1 is
+"Evaluated", not "Specified" (alignment proposed 2026-11-13; see
+IPSTD-OI-014). A complete specification package and an approved verification
+plan are expected by L2.
+
 ### 3.5 Compliance applicability values
 
 - L0: requirement applies from Registered level.
-- L1: requirement applies from Specified level.
+- L1: requirement applies from Evaluated level.
 - L2: requirement applies from Verified level.
 - L3: requirement applies from Release-qualified level.
 
@@ -1296,7 +1302,7 @@ justification and required review approval.
 | Compliance level | Minimum expected evidence |
 |---|---|
 | L0 Registered | IP manifest, identity, source category, repository reference and provenance |
-| L1 Specified | Specification package, feature list, interface definition, parameter description, register definition where applicable, verification plan |
+| L1 Evaluated | Documented functionality and major interfaces, source baseline, applicable requirement list, known limitations, basic functional, lint or structural evaluation results (or recorded pending status), provenance and licence assessment for third-party IP, adoption or continuation decision. A full specification package (feature list, interface definition, parameter description, register definition where applicable) and verification plan are expected by L2 |
 | L2 Verified | Applicable verification results, regression summary, functional and code coverage reports where required, lint results, applicable assertions/formal/CDC/RDC results, traceable evidence |
 | L3 Release-qualified | L2 evidence, approved deviations, quality assessment, release package, licence review, reproducible release source and applicable integration qualification evidence |
 
@@ -1806,7 +1812,7 @@ Cross-reference rules:
 - A rule promoted into the common standard gets a new `KIP-STD` identifier
   with a `derived-from` reference.
 
-The per-rule mapping between the schemes uses one of three relationship
+The per-rule mapping between the schemes uses one of four relationship
 values:
 
 | Value | Meaning |
@@ -1814,9 +1820,15 @@ values:
 | EQUIVALENT | The profile rule and common requirement have the same intent and strength. |
 | STRICTER | The profile rule is stricter; the stricter rule prevails for that SoC. |
 | NEXUS_ONLY | The profile rule has no common counterpart and remains profile-specific. |
+| PROMOTED | The profile rule has been promoted into the common standard under a new `KIP-STD` identifier that records the original profile rule ID as its `derived-from` reference. |
 
 The detailed per-rule mapping table is maintained with the Nexus profile
-and tracked as IPSTD-OI-010.
+in the private repository that owns that profile, and is tracked as
+IPSTD-OI-010. This public standard describes only the mapping methodology and
+area-level relationships; it does not publish profile rule IDs, per-rule
+relationships, or private profile details. The public template
+`../templates/requirement-id-mapping.template.yaml` (KIP-MAP-001) defines the
+mapping record structure for use in that private repository.
 
 ### 20.3 Mapping by requirement area
 
@@ -2068,10 +2080,11 @@ implementation decision.
 | IPSTD-OI-007 | Enforcement-class harmonization | DECIDED (2026-11-12): A/T/R enforcement classes adopted as-is | Dinesh Annayya | DECIDED |
 | IPSTD-OI-008 | KVRF methodology relationship | DECIDED (2026-11-12): KVRF/cocotb is the default reference flow for new KRITVA-developed IP at L2+; equivalent flows (including a SoC profile's own flow) are allowed if they emit KVRF-schema evidence; upstream IP may keep native testbenches plus a wrapper-level KVRF test | Dinesh Annayya | DECIDED |
 | IPSTD-OI-009 | Copyright holder wording | DECIDED (2026-11-12): copyright holder wording is `Kritva Robotics` for KRITVA-authored files; upstream notices are never replaced. Relationship to repository-level licensing remains to be documented | Dinesh Annayya | DECIDED |
-| IPSTD-OI-010 | Promotion of Nexus RTL rules | Identify which KNX-RTL-STD-001 rules should be promoted into the cross-SoC KRITVA IP Standard | Dinesh Annayya | OPEN |
+| IPSTD-OI-010 | Promotion of Nexus RTL rules | PARTIALLY DECIDED (2026-11-13): populated per-rule mapping is kept in the private kritva-nexus repository; public template `requirement-id-mapping.template.yaml` added. Still open: identify which KNX-RTL-STD-001 rules should be promoted into the cross-SoC KRITVA IP Standard | Dinesh Annayya | OPEN |
 | IPSTD-OI-011 | Approved RTL library manifest | Confirm manifest location, schema, ownership, approval process and initial component inventory | Dinesh Annayya | OPEN |
 | IPSTD-OI-012 | Memory-wrapper threshold | Define when a memory implementation must use an approved library wrapper rather than inferred RTL | Dinesh Annayya | OPEN |
 | IPSTD-OI-013 | Quality assessment weights | Review and approve or revise proposed quality dimensions and weights | Dinesh Annayya | OPEN |
+| IPSTD-OI-014 | L1 definition alignment | PROPOSED (2026-11-13): L1 is "Evaluated / Basic evidence", matching LCP section 6.3 and the KVRF Specification; the specification package and verification plan move to L2 expectations. Owner approval required | Dinesh Annayya | OPEN |
 | IPSTD-OI-014 | Compliance assessment authority | Confirm review and approval responsibilities for L0–L3 assessments | Dinesh Annayya | OPEN |
 | IPSTD-OI-015 | Register source and generation toolchain | Confirm SystemRDL as canonical source and qualify generation tools | Dinesh Annayya | OPEN |
 | IPSTD-OI-016 | ASIC and FPGA portability expectations | Define mandatory targets and acceptable implementation-specific exceptions | Dinesh Annayya | OPEN |

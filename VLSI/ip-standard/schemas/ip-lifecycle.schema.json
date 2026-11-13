@@ -1,4 +1,3 @@
-
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/KritvaOS/kritva-standard/main/VLSI/ip-standard/schemas/ip-lifecycle.schema.json",
@@ -409,7 +408,16 @@
         },
         "decision_type": {
           "type": "string",
-          "minLength": 1
+          "enum": [
+            "INITIAL_REGISTRATION",
+            "INITIAL_ADOPTION",
+            "STATE_TRANSITION",
+            "ASSURANCE_CHANGE",
+            "CUSTOMIZATION",
+            "UPSTREAM_UPDATE",
+            "EXCEPTION",
+            "REINSTATEMENT"
+          ]
         },
         "from_state": {
           "type": [
@@ -523,6 +531,17 @@
             "null"
           ],
           "format": "date"
+        },
+        "approval_basis": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "enum": [
+            "INDEPENDENT_REVIEW",
+            "SOLE_OWNER_INTERIM",
+            null
+          ]
         }
       }
     }
