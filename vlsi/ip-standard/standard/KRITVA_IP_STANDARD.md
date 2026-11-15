@@ -1257,7 +1257,7 @@ It does not duplicate KVRF implementation details.
 
 The authoritative verification methodology is maintained under:
 
-`VLSI/verification/KVRF/`
+`vlsi/verification/KVRF/`
 
 ### 14.2 Verification planning
 
@@ -1364,7 +1364,7 @@ and wrapper-level KVRF evidence must be distinguishable in the evidence
 package.
 
 Verification tool versions are UNVERIFIED unless independently established.
-The authoritative definitions are in `VLSI/verification/KVRF/KVRF_SPECIFICATION.md`.
+The authoritative definitions are in `vlsi/verification/KVRF/KVRF_SPECIFICATION.md`.
 
 ---
 
@@ -1503,7 +1503,7 @@ The manifest must identify:
 
 The exact manifest schema is maintained under:
 
-`VLSI/ip-standard/schemas/`
+`vlsi/ip-standard/schemas/`
 
 ### 16.3 Licence files
 
@@ -1671,7 +1671,7 @@ An IP may be consumed by multiple SoCs using separate integration profiles.
 
 The generic consumer-profile descriptions are maintained in:
 
-`VLSI/README.md`, Section 5.
+`vlsi/README.md`, Section 5.
 
 This document does not establish detailed SoC architecture or final IP
 selection.

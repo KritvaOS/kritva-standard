@@ -50,19 +50,19 @@ The VLSI domain is organized into three primary areas:
 3. Verification Reference Flow (KVRF).
 
 ~~~text
-VLSI/
+vlsi/
 ├── README.md
 │
 ├── ip-standard/
 │   ├── README.md
-│   ├── standard/
-│   ├── schemas/
-│   ├── templates/
-│   ├── policies/
-│   ├── examples/
-│   └── tools/
+│   ├── standard/          # exists
+│   ├── schemas/           # exists
+│   ├── templates/         # exists
+│   ├── policies/          # planned - not yet created
+│   ├── examples/          # planned - not yet created
+│   └── tools/             # planned - not yet created
 │
-├── ip-registry/
+├── ip-registry/           # planned - not yet created
 │   ├── README.md
 │   ├── public-catalog/
 │   ├── schemas/
@@ -71,16 +71,12 @@ VLSI/
 │
 ├── verification/
 │   └── KVRF/
-│       ├── README.md
-│       ├── specification/
-│       ├── toolchain/
-│       ├── runners/
-│       ├── coverage/
-│       ├── evidence/
-│       ├── quality/
-│       ├── workflows/
-│       ├── examples/
-│       └── tests/
+│       ├── KVRF_SPECIFICATION.md   # exists (single-file specification)
+│       ├── schemas/                # exists
+│       ├── templates/              # exists
+│       └── README.md, toolchain/, runners/, coverage/, evidence/,
+│           quality/, workflows/, examples/, tests/
+│                                   # planned - not yet created
 │
 ├── design/                 # Future domain - not yet defined
 ├── physical-design/        # Future domain - not yet defined
@@ -90,12 +86,14 @@ VLSI/
 
 This is the intended organization. A listed directory does not imply
 that its standards, tools or workflows have been implemented or approved.
+Entries marked "exists" were present at the last review (2026-11-14); entries
+marked "planned" do not yet exist in the repository.
 
 ## 3. VLSI domain components
 
 ### 3.1 IP Standard
 
-**Location:** `VLSI/ip-standard/`
+**Location:** `vlsi/ip-standard/`
 
 Defines the common engineering contract for KRITVA semiconductor IP.
 
@@ -119,7 +117,7 @@ an IP package complies with KRITVA engineering requirements.
 
 ### 3.2 IP Registry
 
-**Location:** `VLSI/ip-registry/`
+**Location:** `vlsi/ip-registry/`
 
 Maintains the public catalogue of approved and publishable KRITVA IP
 metadata.
@@ -145,7 +143,7 @@ repositories or controlled storage.
 
 ### 3.3 KRITVA Verification Reference Flow (KVRF)
 
-**Location:** `VLSI/verification/KVRF/`
+**Location:** `vlsi/verification/KVRF/`
 
 KVRF defines the reusable verification methodology and reference
 toolchain for KRITVA semiconductor IP.
@@ -226,7 +224,7 @@ Automatic adoption into a qualified KRITVA release is not permitted.
 
 The governing process is defined under:
 
-`VLSI/ip-standard/standard/`
+`vlsi/ip-standard/standard/`
 
 ### 4.3 Commercial and licensed third-party IP
 
@@ -409,7 +407,7 @@ The following reading order is recommended for contributors and reviewers.
 |---|---|---|
 | 1 | `README.md` | Repository scope and organization |
 | 2 | `GOVERNANCE.md` | Ownership, approval and public-content controls |
-| 3 | `VLSI/README.md` | VLSI domain organization and consumer profiles |
+| 3 | `vlsi/README.md` | VLSI domain organization and consumer profiles |
 | 4 | `ip-standard/standard/KRITVA_IP_STANDARD.md` | Normative IP engineering contract |
 | 5 | `ip-standard/standard/OPEN_SOURCE_IP_POLICY.md` | Open-source IP licensing and publication policy |
 | 6 | `ip-standard/standard/IP_ADOPTION_PROCESS.md` | IP discovery and adoption |
@@ -459,7 +457,7 @@ They are placeholders only and are not yet defined normative domains.
 
 ### 8.1 Design
 
-**Proposed location:** `VLSI/design/`
+**Proposed location:** `vlsi/design/`
 
 Potential future scope:
 
@@ -474,7 +472,7 @@ Potential future scope:
 
 ### 8.2 Physical Design
 
-**Proposed location:** `VLSI/physical-design/`
+**Proposed location:** `vlsi/physical-design/`
 
 Potential future scope:
 
@@ -490,7 +488,7 @@ Potential future scope:
 
 ### 8.3 Timing
 
-**Proposed location:** `VLSI/timing/`
+**Proposed location:** `vlsi/timing/`
 
 Potential future scope:
 
@@ -506,7 +504,7 @@ Potential future scope:
 
 ### 8.4 DFT
 
-**Proposed location:** `VLSI/DFT/`
+**Proposed location:** `vlsi/DFT/`
 
 Potential future scope:
 
