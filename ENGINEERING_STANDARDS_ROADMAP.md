@@ -131,6 +131,8 @@ Each repository declares its applicable standards in its existing README or AGEN
 
 ## 9. Open items for the Owner
 
+Status note 2026-11-15: the Owner approved the proposals for these items under D-15. Approved does not mean done; execution is tracked in `planning/TASKS.md`. The items below keep their original wording.
+
 1. D-1 rollout: the core, sense, mind, motion, skill, community and raas READMEs currently show `Copyright (c) 2026 KritvaOS`. The core and community header lint (`scripts/lint/check_source_headers.py`, configuration under `config/`) probably enforces the old holder; confirm and update it together with the headers. KNX-RTL-DOC-002 and the VLSI documents say `Kritva Robotics`; they need the full legal name through a change request (the Nexus rule is SELECTED, so it also needs a new decision record).
 2. Visibility of kritva-nexus is "not yet decided"; it needs a public or private header choice. kritva-enterprise-program is not connected, so its header is unchecked.
 3. D-2 migration: confirm whether kritva-program keeps a pointer file, and how repos that cite `v2/planning/standards/README_STANDARD.md` are updated. The repo-level relationship between the copyright wording and the Apache-2.0 LICENSE is still to be documented.

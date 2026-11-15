@@ -117,10 +117,10 @@ Evidence claims name the exact commit and result, and their scope. Software chec
 
 | ID | Item |
 |---|---|
-| GOV-OI-001 | Approval authority and delegation matrix |
-| GOV-OI-002 | Rollout of the `Kritva Robotics Private Limited` wording, including header-lint configuration in other repositories |
-| GOV-OI-003 | Approval and pin of the Engineering Contract (D-023), now copied to `common/contract/`; it controls over the acceptance standard where they differ |
-| GOV-OI-004 | Pointer notices and cleanup of old copies in `kritva-program` and `kritva-core` (copies here are authoritative from 2026-11-15) |
+| GOV-OI-001 | Approval authority and delegation matrix. Decided 2026-11-15 (D-15): the Owner stays sole approver (interim, not independent); roles are defined on paper and nothing is delegated. Open until roles are written |
+| GOV-OI-002 | Rollout of the `Kritva Robotics Private Limited` wording, including header-lint configuration in other repositories. Plan in `planning/COPYRIGHT_ROLLOUT_PLAN.md` (approved under D-15, not executed) |
+| GOV-OI-003 | Approval and pin of the Engineering Contract (D-023), now copied to `common/contract/`; it controls over the acceptance standard where they differ. Proposal P-1 in `planning/PROPOSALS_FOR_KRITVA_PROGRAM.md`; not approved |
+| GOV-OI-004 | Pointer notices and cleanup of old copies in `kritva-program` and `kritva-core` (copies here are authoritative from 2026-11-15). Sequence approved under D-15: pointer banners, README link updates, then removal after one green check cycle; not executed |
 | GOV-OI-005 | Controlled list of decision-type names used across policies and templates |
 
 ## 13. Approval record

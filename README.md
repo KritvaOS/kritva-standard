@@ -55,6 +55,7 @@ A label names a role, not an approval. Each migrated document keeps the status i
 |---|---|---|---|
 | [GOVERNANCE.md](GOVERNANCE.md) | Standards governance (KSTD-GOV-001) | AUTHORITATIVE, DRAFT | Yes, by Owner-reviewed change |
 | [ENGINEERING_STANDARDS_ROADMAP.md](ENGINEERING_STANDARDS_ROADMAP.md) | Roadmap and open decisions | REFERENCE, DRAFT | Yes |
+| [planning/](planning/TASKS.md) | Proposed task IDs, kritva-program proposals and the copyright rollout plan (`TASKS.md`, `PROPOSALS_FOR_KRITVA_PROGRAM.md`, `COPYRIGHT_ROLLOUT_PLAN.md`) | REFERENCE, PROPOSED | Yes |
 | [common/](common/README.md) | Migrated common specifications, templates, schemas, contract, tools | MIXED | Per file; migrated copies are edited only through a recorded change |
 | [common/readme/](common/readme/README_STANDARD.md) | README standard set and document header standard | AUTHORITATIVE, per file | Per file |
 | [common/acceptance/](common/acceptance/ACCEPTANCE_STANDARD.md) | Acceptance standard and templates | AUTHORITATIVE, per file | Per file |
