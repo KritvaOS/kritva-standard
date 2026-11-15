@@ -30,11 +30,12 @@ Reviewed 2026-11-14: kritva-core, kritva-sense, kritva-mind, kritva-motion, krit
 | D-5 | `kritva-program` keeps only planning, status monitoring and project management. All other specifications move to `kritva-standard` under `common`, `software`, `embedded`, `mechanical` and `vlsi`. (2026-11-15) |
 | D-6 | The README migration plan stays in `kritva-standard`. (2026-11-15) |
 | D-7 | Old copies are deleted only after setup is clean; pointers are updated where needed. (2026-11-15) |
-| D-8 | `VLSI/` is renamed `vlsi/`. (2026-11-15; rename done by the Owner 2026-11-15, path references updated) |
+| D-8 | `VLSI/` is renamed `vlsi/`. (2026-11-15; rename pending) |
 | D-9 | Common scripts move to `common/tools/`. (2026-11-15; first set copied, see `common/tools/README.md`) |
 | D-11 | All checkers stay in `kritva-program` so that one common entity controls commit approval; supersedes D-9 for checkers. `common/tools/` copies are reference only. (2026-11-15) |
 | D-12 | Final script decision: scripts needed for a local commit live inside each repository's own folder; all program-level checks, including standard-conformance checks, live in `kritva-program`; `kritva-standard` holds no authoritative scripts. Supersedes D-9 and D-11. (2026-11-15) |
 | D-13 | Refines D-12: where needed, both copies are kept: the program-level checker in `kritva-program` and a local checker in the repository that commits. Copies must not drift (see `common/tools/README.md` section 6). (2026-11-15) |
+| D-14 | Approved: the local and program-level checker split and the drift control in `common/tools/README.md` section 6. (2026-11-15) |
 | D-10 | The kritva-program version of `check_commit_format.py` is the standard commit format checker. (2026-11-15) |
 
 Earlier decisions (2026-11-12) remain in force: separate namespaced requirement ID schemes, no renumbering, MUST in common standards, A/T/R enforcement classes, KVRF/cocotb default flow.
@@ -55,7 +56,7 @@ Open follow-ups from these decisions are in section 9.
 
 | Standard or rule set | Location | State | Plan |
 |---|---|---|---|
-| VLSI IP standard, policies, KVRF, schemas, templates | `kritva-standard/vlsi/` | v0.1.0 DRAFT | Continue; fix index (section 7) |
+| VLSI IP standard, policies, KVRF, schemas, templates | `kritva-standard/VLSI/` | v0.1.0 DRAFT | Continue; fix index (section 7) |
 | KNX-RTL-STD-001 (Nexus RTL) | `kritva-nexus/standards/` | v1.0.1 APPROVED (NX-DEC-023) | Keep; map to common rules (IPSTD-OI-010) |
 | README standard, review checklist, migration plan, public and private templates | `kritva-program` v2/planning/standards/ | Exist; README_STANDARD.md not yet read in full | Migrate (D-2) |
 | Document header standard (KOS-STD-DOCHDR) | `kritva-program` v2/planning/standards/ | PROPOSED (D-055, D-056) | Migrate with the README standard; align with D-1 |
@@ -83,7 +84,7 @@ kritva-standard/
 ├── software/                     # KSTD-SW-001 and KSTD-CON-001 (contract standard; folder split TBD)
 ├── embedded/                     # KSTD-EMB-001 (real-time and control)
 ├── mechanical/                   # KSTD-MECH-001
-└── vlsi/                         # KSTD-VLSI-001 (renamed from VLSI/ 2026-11-15, CMN-OI-008 closed)
+└── vlsi/                         # KSTD-VLSI-001 (exists as VLSI/; rename to vlsi/ pending, CMN-OI-008)
 ~~~
 
 ## 6. Document IDs (D-3)
