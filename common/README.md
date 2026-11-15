@@ -87,6 +87,6 @@ Original IDs stay valid as aliases.
 | CMN-OI-002 | Old copies stay until the setup is clean, then are deleted (deletion needs delete permission on the device). Pointer updates in `kritva-program`, `kritva-core` and the citing repositories are to be made when needed; not done yet |
 | CMN-OI-004 | Whether the README templates need a copyright-header section |
 | CMN-OI-005 | Program-level checks stay authoritative in `kritva-program`; each repository keeps the scripts its local commit needs; the reference copies in [tools/](tools/README.md) are to be removed when setup is clean. Which scripts count as local-commit and which as program-level is to be listed (TLS-OI-004) |
-| CMN-OI-006 | Document header standard is PROPOSED, not approved |
+| CMN-OI-006 | Document header standard is PROPOSED, not approved. D-15 approves it as KSTD-GOV-003 with changes (KSTD document ID field, new copyright header); the revised text is not written |
 | CMN-OI-007 | Engineering Contract approval, new pin location and the pin check after the move (GOV-OI-003) |
 | CMN-OI-008 | CLOSED 2026-11-15: `VLSI/` renamed `vlsi/` by the Owner; path references in the VLSI documents and the repository docs updated |
