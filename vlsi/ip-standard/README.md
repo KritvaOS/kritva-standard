@@ -43,24 +43,24 @@ All listed artifacts are version 0.1.0 DRAFT unless otherwise stated. DRAFT docu
 
 | ID | Path | Purpose | Status |
 |---|---|---|---|
-| IPSTD | `VLSI/ip-standard/standard/KRITVA_IP_STANDARD.md` | Common KRITVA IP requirements and standardization framework | DRAFT |
-| OSIP | `VLSI/ip-standard/standard/OPEN_SOURCE_IP_POLICY.md` | Open-source IP evaluation, licensing and adoption controls | DRAFT |
-| ADP | `VLSI/ip-standard/standard/IP_ADOPTION_PROCESS.md` | IP candidate evaluation and adoption process | DRAFT |
-| CUST | `VLSI/ip-standard/standard/IP_CUSTOMIZATION_POLICY.md` | Customization categories, upstream separation and re-verification | DRAFT |
-| UPM | `VLSI/ip-standard/standard/IP_UPSTREAM_MAINTENANCE_POLICY.md` | Upstream monitoring, event triage and maintenance | DRAFT |
-| LCP | `VLSI/ip-standard/standard/IP_LIFECYCLE_POLICY.md` | Lifecycle states, assurance levels and lifecycle decisions | DRAFT |
-| KVRF | `VLSI/verification/KVRF/KVRF_SPECIFICATION.md` | Verification reference flow and evidence requirements | DRAFT |
-| KVRF-SCHEMA | `VLSI/verification/KVRF/schemas/kvrf-evidence.schema.json` | Validation schema for KVRF evidence records | DRAFT |
-| LCP-SCHEMA | `VLSI/ip-standard/schemas/ip-lifecycle.schema.json` | Validation schema for IP lifecycle records | DRAFT |
-| RTL-MANIFEST-SCHEMA | `VLSI/ip-standard/schemas/rtl-library-manifest.schema.json` | Validation schema for approved RTL library manifests | DRAFT |
-| TPL-LCP | `VLSI/ip-standard/templates/ip-lifecycle.template.yaml` | IP lifecycle record template | DRAFT |
-| TPL-ADP | `VLSI/ip-standard/templates/ip-adoption-record.template.yaml` | IP adoption evaluation and recommendation record | DRAFT |
-| TPL-CUST | `VLSI/ip-standard/templates/ip-customization-record.template.yaml` | IP customization and re-verification record | DRAFT |
-| TPL-UPM | `VLSI/ip-standard/templates/upstream-watch-register.template.yaml` | Upstream dependency watch register and event record | DRAFT |
-| TPL-KVRF | `VLSI/verification/KVRF/templates/verification-plan.template.yaml` | KVRF verification planning template | DRAFT |
-| TPL-WVR | `VLSI/ip-standard/templates/waiver-exception-record.template.yaml` | Lifecycle, verification and standard waiver record | DRAFT |
-| TPL-MAP | `VLSI/ip-standard/templates/requirement-id-mapping.template.yaml` | Public template for profile-to-common requirement mapping | DRAFT |
-| INDEX | `VLSI/ip-standard/README.md` | Public navigation and framework index | DRAFT |
+| IPSTD | `vlsi/ip-standard/standard/KRITVA_IP_STANDARD.md` | Common KRITVA IP requirements and standardization framework | DRAFT |
+| OSIP | `vlsi/ip-standard/standard/OPEN_SOURCE_IP_POLICY.md` | Open-source IP evaluation, licensing and adoption controls | DRAFT |
+| ADP | `vlsi/ip-standard/standard/IP_ADOPTION_PROCESS.md` | IP candidate evaluation and adoption process | DRAFT |
+| CUST | `vlsi/ip-standard/standard/IP_CUSTOMIZATION_POLICY.md` | Customization categories, upstream separation and re-verification | DRAFT |
+| UPM | `vlsi/ip-standard/standard/IP_UPSTREAM_MAINTENANCE_POLICY.md` | Upstream monitoring, event triage and maintenance | DRAFT |
+| LCP | `vlsi/ip-standard/standard/IP_LIFECYCLE_POLICY.md` | Lifecycle states, assurance levels and lifecycle decisions | DRAFT |
+| KVRF | `vlsi/verification/KVRF/KVRF_SPECIFICATION.md` | Verification reference flow and evidence requirements | DRAFT |
+| KVRF-SCHEMA | `vlsi/verification/KVRF/schemas/kvrf-evidence.schema.json` | Validation schema for KVRF evidence records | DRAFT |
+| LCP-SCHEMA | `vlsi/ip-standard/schemas/ip-lifecycle.schema.json` | Validation schema for IP lifecycle records | DRAFT |
+| RTL-MANIFEST-SCHEMA | `vlsi/ip-standard/schemas/rtl-library-manifest.schema.json` | Validation schema for approved RTL library manifests | DRAFT |
+| TPL-LCP | `vlsi/ip-standard/templates/ip-lifecycle.template.yaml` | IP lifecycle record template | DRAFT |
+| TPL-ADP | `vlsi/ip-standard/templates/ip-adoption-record.template.yaml` | IP adoption evaluation and recommendation record | DRAFT |
+| TPL-CUST | `vlsi/ip-standard/templates/ip-customization-record.template.yaml` | IP customization and re-verification record | DRAFT |
+| TPL-UPM | `vlsi/ip-standard/templates/upstream-watch-register.template.yaml` | Upstream dependency watch register and event record | DRAFT |
+| TPL-KVRF | `vlsi/verification/KVRF/templates/verification-plan.template.yaml` | KVRF verification planning template | DRAFT |
+| TPL-WVR | `vlsi/ip-standard/templates/waiver-exception-record.template.yaml` | Lifecycle, verification and standard waiver record | DRAFT |
+| TPL-MAP | `vlsi/ip-standard/templates/requirement-id-mapping.template.yaml` | Public template for profile-to-common requirement mapping | DRAFT |
+| INDEX | `vlsi/ip-standard/README.md` | Public navigation and framework index | DRAFT |
 
 Templates are starting points, not completed records. Validate completed records against their applicable schemas where a schema is provided.
 
