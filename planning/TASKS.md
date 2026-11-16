@@ -24,3 +24,4 @@ These IDs let commits in this repository carry a `Task:` footer under the Kritva
 | KOS-STD-011 | VLSI continuation: APB profile, RTL library manifest, Edge namespace, KVRF versioning, toolchain baseline | NOT_STARTED (defaults approved 2026-11-15) | Roadmap phase 5 |
 | KOS-STD-012 | Repository hygiene: AGENTS, SECURITY, CONTRIBUTING, CODEOWNERS, task record | DRAFTED | Acceptance standard section 7 |
 | KOS-STD-013 | Rename `VLSI/` to `vlsi/` and update path references | DONE 2026-11-15 (Owner ran the rename; references updated) | CMN-OI-008 |
+| KOS-STD-014 | Bring kritva-standard to contract section 8 for documents-only repositories: add the `secret-scan` and `commit-message-check` workflows and a local commit checker (base copy) | NOT_STARTED | Contract review 2026-11-16 |
