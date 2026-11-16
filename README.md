@@ -77,6 +77,7 @@ The standards are Markdown, YAML and JSON. No build is needed. The README checke
 | Command | Effect | Needs | Preview |
 |---|---|---|---|
 | `python3 ../kritva-program/scripts/docs/check_readme.py README.md` | check | A sibling clone of kritva-program | Read-only |
+| `python3 scripts/security/check_commit_format.py --range origin/main..HEAD` | check | Local copy of the commit checker | Read-only |
 
 The copies in [common/tools/](common/tools/README.md) are reference copies of the checkers. The Owner decided on 2026-11-15 that the checkers stay in kritva-program; the copies here are not authoritative and are due for removal once the setup is clean.
 
@@ -108,9 +109,11 @@ No status file or generator exists here. Execution is described in the roadmap. 
 | Check | Command | Effect | Runs in CI? | Expected |
 |---|---|---|---|---|
 | README structure | `python3 ../kritva-program/scripts/docs/check_readme.py README.md` | check | No | PASS means the implemented structural checks passed; it does not show the content is accurate |
+| Commit format | `python3 scripts/security/check_commit_format.py --range origin/main..HEAD` | check | No | Every commit in the range passes the Kritva commit format |
+| Commit messages | `python3 -m unittest discover -s tests/commit_message_check` and `python3 scripts/security/check_commit_messages.py --range origin/main..HEAD` | check | Yes (`commit-message-check`) | No AI-session trailer in any commit |
 | Copy integrity | `sha256sum` on a migrated file against the table in `common/README.md` | check | No | Hash equals the recorded value |
 
-No CI workflow exists in this repository. Schema validation of the VLSI records is described in the VLSI index.
+Two workflows run on pull requests: `commit-message-check` and `secret-scan` (copies of the capability repositories' workflows, KOS-STD-014). No other CI workflow exists. Schema validation of the VLSI records is described in the VLSI index.
 
 ## 12. Git Workflow and Review
 
