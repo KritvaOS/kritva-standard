@@ -3,7 +3,7 @@
      private template even while its GitHub setting is temporarily public. The class of each repository is recorded in
      the visibility decision, not in this comment.
      Keep internal planning detail, infrastructure and confidential assessments out of a public README.
-     Standard: v2/planning/standards/README_STANDARD.md in kritva-program.
+     Standard: common/readme/README_STANDARD.md in kritva-standard.
      Copy below the line. Replace every <placeholder>. Link existing files only; write "Not yet defined" otherwise.
      Delete these comments. Check with: python3 scripts/docs/check_readme.py README.md -->
 

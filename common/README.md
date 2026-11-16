@@ -36,8 +36,8 @@ Each file is a byte-for-byte copy of its source. No text, link, ID or status was
 |---|---|---|---|---|
 | [readme/README_STANDARD.md](readme/README_STANDARD.md) | kritva-program v2/planning/standards/ | KOS-STD-README | APPROVED by the owner (D-066) | `2af0cec491565638851607cca30e88303ce48006cbb6facab568644675f1da1e` |
 | [readme/README_REVIEW_CHECKLIST.md](readme/README_REVIEW_CHECKLIST.md) | same | none | per file | `56e57edfd416102423540bf73e6eef1601d3584890042da1d5c068fef842dacc` |
-| [readme/README_TEMPLATE_PUBLIC.md](readme/README_TEMPLATE_PUBLIC.md) | same | none | per file | `24b8f693e4c7cf6b29bc0961d7d1f3494b398e401ce9d79ab6503a70aac98d3d` |
-| [readme/README_TEMPLATE_PRIVATE.md](readme/README_TEMPLATE_PRIVATE.md) | same | none | per file | `f50c5afa1fdbb949b2c10837efccd0542ddc71c3250136260a24c67792c65fb5` |
+| [readme/README_TEMPLATE_PUBLIC.md](readme/README_TEMPLATE_PUBLIC.md) | same | none | per file | `a8160df6aab043ee6a18ece51849e780e4ea8eb52a3f66db421f07163dffa96d` |
+| [readme/README_TEMPLATE_PRIVATE.md](readme/README_TEMPLATE_PRIVATE.md) | same | none | per file | `210a1dabcef1a88df6477bbd5a125c97c9a681c4452ea0554fdb5d9c9e7d9cd3` |
 | [readme/README_MIGRATION_PLAN.md](readme/README_MIGRATION_PLAN.md) | same | none | per file | `16b6d8f6e9862aeb128944346b982deaaa00590ae4a76a2b9a87a366e02d45ec` |
 | [readme/DOCUMENT_HEADER_STANDARD.md](readme/DOCUMENT_HEADER_STANDARD.md) | same | KOS-STD-DOCHDR | PROPOSED (D-055, D-056) | `5e1238f753e4e8f0b68025d38bf130df5b66ede6587e2f3f61fb1f92a0e01e57` |
 | [acceptance/ACCEPTANCE_STANDARD.md](acceptance/ACCEPTANCE_STANDARD.md) | kritva-program v2/planning/ | none | APPROVED (D-080, D-047, D-053) | `449912dcd10a49093ab0ea2db066b1c98449ad2db26c6478128c9836ff1d3094` |
@@ -46,6 +46,8 @@ Each file is a byte-for-byte copy of its source. No text, link, ID or status was
 | [acceptance/templates/PULL_REQUEST_TEMPLATE.md](acceptance/templates/PULL_REQUEST_TEMPLATE.md) | same | none | template | `b541b558bfb8adee3470e6dddfdccbed1e865fa015746230bdb6f1ab9870f59f` |
 | [schemas/status.schema.json](schemas/status.schema.json) | kritva-program schema/ | none | status schema 2.0 | `0c12f2a652936fd3c9db5a571e61491e1bacb8047087e5567c3c5e0fa1c1231d` |
 | [contract/ENGINEERING_CONTRACT.md](contract/ENGINEERING_CONTRACT.md) | kritva-core docs/development/ | none | DRAFT for owner approval (D-023, PD-015) | `b57e24ba9771b0d156a352ed88aeb0462123af3bf14e0b23b9ecb18a07127021` (equals the SHA-256 in core's pin file) |
+
+**Changed after copying (2026-11-15).** The `Standard:` line in the leading comment of the two README templates was changed from `v2/planning/standards/README_STANDARD.md in kritva-program` to `common/readme/README_STANDARD.md in kritva-standard`, because the line is copied into every new README. The SHA-256 values of those two templates above are those of the changed files; the source hashes were `24b8f693…` (public) and `f50c5afa…` (private). Nothing else in them changed.
 
 The acceptance standard carries the commit format (section 4), test gates, tags, definition of done and required files. The Engineering Contract states that it controls over the acceptance standard where they differ.
 

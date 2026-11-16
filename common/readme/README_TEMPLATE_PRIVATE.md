@@ -2,7 +2,7 @@
      Use it for every repository whose approved Visibility Class is PRIVATE, whatever its GitHub setting is today
      (a temporary public setting does not change the template). The class of each repository is recorded in the
      visibility decision, not in this comment.
-     Standard: v2/planning/standards/README_STANDARD.md in kritva-program.
+     Standard: common/readme/README_STANDARD.md in kritva-standard.
      Copy below the line. Replace every <placeholder>. Link existing files only; write "Not yet defined" otherwise.
      Delete these comments. Check with: python3 scripts/docs/check_readme.py README.md -->
 
