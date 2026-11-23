@@ -25,3 +25,4 @@ These IDs let commits in this repository carry a `Task:` footer under the Kritva
 | KOS-STD-012 | Repository hygiene: AGENTS, SECURITY, CONTRIBUTING, CODEOWNERS, task record | DRAFTED | Acceptance standard section 7 |
 | KOS-STD-013 | Rename `VLSI/` to `vlsi/` and update path references | DONE 2026-11-15 (Owner ran the rename; references updated) | CMN-OI-008 |
 | KOS-STD-014 | Bring kritva-standard to contract section 8 for documents-only repositories: add the `secret-scan` and `commit-message-check` workflows and a local commit checker (base copy) | DRAFTED (files prepared; awaiting merge) | Contract review 2026-11-16 |
+| KOS-STD-015 | Per-repository review register convention: proposal text only (`planning/REVIEW_REGISTER_CONVENTION.proposed.md`); not adopted, nothing mandatory | DRAFTED, awaiting Owner review | Owner request 2026-11-23 |
